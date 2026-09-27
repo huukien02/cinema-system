@@ -1,0 +1,61 @@
+services:
+  backend:
+    container_name: cinema_backend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3001:3000
+    volumes:
+      - .:/app
+      - /app/node_modules
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: development
+
+      # PostgreSQL
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USERNAME: cinema
+      DB_PASSWORD: cinema_password
+      DB_DATABASE: cinema_db
+
+      JWT_SECRET: ${JWT_SECRET:-your-super-secret-access-key}
+      JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET:-your-super-secret-refresh-key}
+
+      # Redis
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+
+    depends_on:
+      - postgres
+      - redis
+
+    command: pnpm start:dev
+
+  postgres:
+    image: postgres:17-alpine
+    container_name: cinema_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: cinema
+      POSTGRES_PASSWORD: cinema_password
+      POSTGRES_DB: cinema_db
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    container_name: cinema_redis
+    restart: unless-stopped
+    ports:
+      - 6379:6379
+    volumes:
+      - redis_data:/data
+
+volumes:
+  postgres_data:
+  redis_data:
