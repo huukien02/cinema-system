@@ -1,0 +1,289 @@
+CINEMA-SYSTEM – CÁC KỸ THUẬT BACKEND CẦN ÁP DỤNG
+=====================================================
+
+1. KIẾN TRÚC BACKEND
+--------------------
+[ ] Modular Monolith
+[ ] Dependency Injection
+[ ] Repository Pattern
+[ ] Service Layer
+[ ] DTO Pattern
+[ ] Dependency Inversion
+[ ] SOLID
+
+
+2. POSTGRESQL / TYPEORM
+-----------------------
+[ ] Entity Relationship
+[ ] One-to-Many / Many-to-Many
+[ ] Index
+[ ] Composite Index
+[ ] Unique Constraint
+[ ] Transaction
+[ ] Pessimistic Lock
+[ ] Optimistic Lock
+[ ] Query Builder
+[ ] Pagination
+[ ] Query Optimization
+[ ] N+1 Prevention
+[ ] Migration
+
+
+3. AUTHENTICATION
+-----------------
+[ ] JWT
+[ ] Access Token / Refresh Token
+[ ] Refresh Token Rotation
+[ ] Redis Token Storage
+[ ] Token Revocation
+[ ] HttpOnly Cookie
+[ ] RBAC
+[ ] Guard
+[ ] Permission
+
+
+4. REDIS
+--------
+[ ] Cache-Aside
+[ ] TTL
+[ ] Cache Invalidation
+[ ] Redis Hash
+[ ] Redis Set
+[ ] Distributed Lock
+[ ] Rate Limiting
+
+
+5. BOOKING / SEAT
+-----------------
+[ ] Transaction
+[ ] Row Lock
+[ ] Pessimistic Lock
+[ ] Optimistic Lock
+[ ] Race Condition Handling
+[ ] Temporary Seat Lock
+[ ] Seat Lock Expiration
+[ ] Idempotency
+[ ] Concurrency Control
+
+
+6. PAYMENT
+----------
+[ ] Payment State Machine
+[ ] Idempotency
+[ ] Webhook
+[ ] Transaction
+[ ] Retry
+[ ] Payment Timeout
+[ ] Refund Flow
+
+
+7. RABBITMQ
+-----------
+[ ] Producer / Consumer
+[ ] Exchange
+[ ] Queue
+[ ] Routing Key
+[ ] Direct Exchange
+[ ] Topic Exchange
+[ ] ACK / NACK
+[ ] Retry
+[ ] Dead Letter Queue
+[ ] Idempotent Consumer
+
+
+8. BACKGROUND JOB
+-----------------
+[ ] BullMQ
+[ ] Worker
+[ ] Delayed Job
+[ ] Retry Job
+[ ] Job Deduplication
+[ ] Scheduled Job
+
+
+9. API
+------
+[ ] RESTful API
+[ ] Pagination
+[ ] Filtering
+[ ] Sorting
+[ ] Searching
+[ ] API Versioning
+[ ] Global Exception Filter
+[ ] ValidationPipe
+[ ] Interceptor
+[ ] Standardized Response
+
+
+10. SECURITY
+-----------
+[ ] Password Hashing
+[ ] CORS
+[ ] CSRF
+[ ] XSS Prevention
+[ ] SQL Injection Prevention
+[ ] Rate Limiting
+[ ] Brute-force Protection
+[ ] Input Validation
+
+
+11. TESTING
+-----------
+[ ] Unit Test
+[ ] Integration Test
+[ ] E2E Test
+[ ] Database Test
+[ ] Redis Test
+[ ] RabbitMQ Test
+[ ] Concurrency Test
+[ ] Booking Race-condition Test
+
+
+12. PERFORMANCE
+---------------
+[ ] Database Indexing
+[ ] Query Optimization
+[ ] Redis Caching
+[ ] Connection Pool
+[ ] Pagination
+[ ] Load Testing
+[ ] Bottleneck Analysis
+
+
+13. DOCKER / DEVOPS
+-------------------
+[ ] Docker
+[ ] Docker Compose
+[ ] Multi-stage Build
+[ ] Health Check
+[ ] Container Networking
+[ ] Environment Management
+[ ] CI/CD
+[ ] Database Migration
+
+
+14. OBSERVABILITY
+-----------------
+[ ] Structured Logging
+[ ] Request ID
+[ ] Correlation ID
+[ ] Health Check
+[ ] Metrics
+[ ] Monitoring
+[ ] Error Tracking
+[ ] Distributed Tracing
+
+
+15. SYSTEM DESIGN
+-----------------
+[ ] Stateless Backend
+[ ] Horizontal Scaling
+[ ] Load Balancing
+[ ] Cache Strategy
+[ ] Message-driven Architecture
+[ ] Event-driven Architecture
+[ ] Fault Tolerance
+[ ] Retry Strategy
+[ ] Circuit Breaker
+[ ] Eventual Consistency
+
+
+=====================================================
+CÁC KỸ THUẬT QUAN TRỌNG NHẤT TRONG CINEMA SYSTEM
+=====================================================
+
+1. Transaction
+2. Pessimistic Lock
+3. Redis Distributed Lock
+4. Idempotency
+5. RabbitMQ
+
+Đặc biệt tập trung vào bài toán:
+
+User A ──┐
+         ├── cùng chọn một ghế
+User B ──┘
+
+Phải xử lý:
+- Race Condition
+- Concurrency
+- Transaction
+- Lock
+- Seat Lock
+- Idempotency
+- Payment consistency
+- Queue retry
+
+
+=====================================================
+TỔNG QUAN KỸ THUẬT
+=====================================================
+
+NestJS
+├── Modular Monolith
+├── DI
+├── Repository Pattern
+├── DTO
+└── SOLID
+
+PostgreSQL
+├── Index
+├── Composite Index
+├── Transaction
+├── Pessimistic Lock
+├── Optimistic Lock
+└── Query Optimization
+
+Redis
+├── Cache
+├── TTL
+├── Cache Invalidation
+└── Distributed Lock
+
+Booking
+├── Concurrency Control
+├── Race Condition
+├── Seat Lock
+├── Transaction
+└── Idempotency
+
+Payment
+├── State Machine
+├── Webhook
+├── Idempotency
+└── Retry
+
+RabbitMQ
+├── Exchange
+├── Queue
+├── ACK/NACK
+├── Retry
+└── DLQ
+
+BullMQ
+├── Worker
+├── Delayed Job
+└── Retry
+
+Security
+├── JWT
+├── Refresh Token
+├── RBAC
+└── Rate Limit
+
+Testing
+├── Unit
+├── Integration
+├── E2E
+└── Concurrency Test
+
+DevOps
+├── Docker
+├── Docker Compose
+└── CI/CD
+
+System Design
+├── Scalability
+├── Fault Tolerance
+├── Eventual Consistency
+└── Distributed System

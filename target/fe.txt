@@ -1,0 +1,277 @@
+CINEMA-SYSTEM – NEXT.JS TECHNIQUES CẦN ÁP DỤNG
+=================================================
+
+1. APP ROUTER
+-------------
+[ ] App Router
+[ ] Route Groups
+[ ] Nested Layout
+[ ] Dynamic Routes
+[ ] Catch-all Routes
+[ ] Parallel Routes
+[ ] Intercepting Routes
+
+
+2. RENDERING
+------------
+[ ] Server Components
+[ ] Client Components
+[ ] SSR
+[ ] SSG
+[ ] ISR
+[ ] Dynamic Rendering
+[ ] Static Rendering
+[ ] Streaming
+[ ] Suspense
+
+
+3. DATA FETCHING
+----------------
+[ ] Server-side Data Fetching
+[ ] Client-side Data Fetching
+[ ] Server Components gọi API
+[ ] Client Components gọi API
+[ ] Request Memoization
+[ ] Caching
+[ ] Revalidation
+[ ] revalidate
+[ ] no-store
+[ ] Cache Invalidation
+
+
+4. SERVER ACTIONS
+-----------------
+[ ] Server Actions
+[ ] Form Action
+[ ] Mutation bằng Server Action
+[ ] Revalidation sau mutation
+[ ] revalidatePath
+[ ] revalidateTag
+
+
+5. ROUTING
+----------
+[ ] Dynamic Route
+[ ] Route Params
+[ ] Query Params
+[ ] searchParams
+[ ] Programmatic Navigation
+[ ] redirect
+[ ] notFound
+[ ] useRouter
+[ ] usePathname
+[ ] useSearchParams
+
+
+6. MIDDLEWARE / PROXY
+---------------------
+[ ] Authentication Middleware / Proxy
+[ ] Protected Routes
+[ ] Role-based Routes
+[ ] Redirect
+[ ] Request Filtering
+
+
+7. AUTHENTICATION
+-----------------
+[ ] Cookie
+[ ] HttpOnly Cookie
+[ ] Secure Cookie
+[ ] Session Handling
+[ ] Access Token
+[ ] Refresh Token
+[ ] Token Refresh
+[ ] Protected Layout
+[ ] Auth State Synchronization
+
+
+8. API INTEGRATION
+------------------
+[ ] Fetch API
+[ ] Axios
+[ ] API Client
+[ ] Request Interceptor
+[ ] Response Interceptor
+[ ] Error Handling
+[ ] Retry
+[ ] Request Cancellation
+[ ] API Type Safety
+
+
+9. LOADING / ERROR HANDLING
+---------------------------
+[ ] loading.tsx
+[ ] error.tsx
+[ ] not-found.tsx
+[ ] global-error.tsx
+[ ] Suspense
+[ ] Skeleton UI
+[ ] Error Boundary
+
+
+10. METADATA / SEO
+------------------
+Áp dụng chủ yếu cho User FE:
+
+[ ] Metadata API
+[ ] Dynamic Metadata
+[ ] Open Graph
+[ ] Sitemap
+[ ] Robots
+[ ] Canonical URL
+[ ] Structured Data
+
+
+11. IMAGE / ASSET OPTIMIZATION
+------------------------------
+[ ] next/image
+[ ] Image Optimization
+[ ] Responsive Images
+[ ] Lazy Loading
+[ ] Image Priority
+[ ] next/font
+[ ] Font Optimization
+
+
+12. PERFORMANCE
+---------------
+[ ] Code Splitting
+[ ] Lazy Loading
+[ ] Dynamic Import
+[ ] Prefetching
+[ ] Streaming
+[ ] Suspense
+[ ] Server Components
+[ ] Bundle Optimization
+[ ] Rendering Optimization
+
+
+13. STATE MANAGEMENT KẾT HỢP NEXT.JS
+------------------------------------
+Không phải core Next.js nhưng FE Cinema nên áp dụng:
+
+[ ] TanStack Query
+[ ] Zustand
+[ ] Server State
+[ ] Client State
+[ ] URL State
+[ ] Cache Synchronization
+[ ] Optimistic Update
+
+
+14. REAL-TIME
+------------
+Cinema rất phù hợp để luyện:
+
+[ ] Socket.IO Client
+[ ] WebSocket
+[ ] Client Component cho realtime
+[ ] Connection Management
+[ ] Reconnection
+[ ] Event Handling
+[ ] Real-time Cache Update
+[ ] Real-time Seat Synchronization
+
+
+15. FORMS
+---------
+[ ] React Hook Form
+[ ] Zod
+[ ] Server Action + Form
+[ ] Client-side Validation
+[ ] Server-side Validation
+[ ] Form Error Handling
+[ ] Multi-step Form
+
+
+16. ADMIN / MANAGEMENT
+----------------------
+[ ] Nested Admin Layout
+[ ] Protected Admin Route
+[ ] RBAC
+[ ] Permission-based Rendering
+[ ] Server-side Pagination
+[ ] Server-side Filtering
+[ ] Server-side Sorting
+[ ] URL Search Params
+[ ] Dynamic Forms
+[ ] File Upload
+[ ] Dashboard
+[ ] Charts
+[ ] Data Table
+
+
+=================================================
+NEXT.JS – SENIOR CHECKLIST CHO CINEMA SYSTEM
+=================================================
+
+[ ] App Router
+
+[ ] Server Components
+[ ] Client Components
+
+[ ] SSR
+[ ] SSG
+[ ] ISR
+[ ] Dynamic Rendering
+
+[ ] Server-side Data Fetching
+[ ] Client-side Data Fetching
+[ ] Cache
+[ ] Revalidation
+
+[ ] Server Actions
+
+[ ] Dynamic Routes
+[ ] Search Params
+[ ] Middleware / Proxy
+
+[ ] Authentication
+[ ] Protected Routes
+[ ] RBAC
+
+[ ] loading.tsx
+[ ] error.tsx
+[ ] not-found.tsx
+[ ] Suspense
+
+[ ] Metadata / SEO
+[ ] Image Optimization
+[ ] Font Optimization
+
+[ ] Streaming
+[ ] Lazy Loading
+[ ] Dynamic Import
+[ ] Code Splitting
+
+[ ] TanStack Query
+[ ] Zustand
+
+[ ] Socket.IO
+[ ] Real-time
+
+[ ] Testing
+
+
+=================================================
+5 NHÓM CẦN ĐÀO SÂU NHẤT
+=================================================
+
+1. Server Components / Client Components
+
+2. SSR / SSG / ISR / Dynamic Rendering
+
+3. Data Fetching + Cache + Revalidation
+
+4. Authentication + Protected Route + RBAC
+
+5. Real-time Seat Booking + TanStack Query + Zustand
+
+
+MỤC TIÊU
+=========
+Không học Next.js theo kiểu học hết API.
+
+Cinema System phải thực sự sử dụng các kỹ thuật trên
+để luyện Next.js theo hướng Senior, thay vì chỉ dùng
+Next.js như một React app có routing.
