@@ -1,7 +1,8 @@
-import {
+﻿import {
   Injectable,
   Inject,
   UnauthorizedException,
+  ConflictException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { JwtService } from '@nestjs/jwt';
@@ -12,6 +13,7 @@ import { Redis } from 'ioredis';
 
 import { User } from '../user/entities/user.entity.js';
 import { LoginDto } from './dto/login.dto.js';
+import { RegisterDto } from './dto/register.dto.js';
 import { REDIS_CLIENT } from '../redis/redis.provider.js';
 
 @Injectable()
@@ -27,11 +29,43 @@ export class AuthService {
   ) {}
 
   // =========================
+  // REGISTER
+  // =========================
+
+  async register(dto: RegisterDto) {
+    const existingUser = await this.userRepository.findOne({
+      where: { email: dto.email },
+    });
+
+    if (existingUser) {
+      throw new ConflictException('Email đã tồn tại trong hệ thống');
+    }
+
+    const hashedPassword = await bcrypt.hash(dto.password, 10);
+
+    const user = this.userRepository.create({
+      fullName: dto.fullName,
+      email: dto.email,
+      password: hashedPassword,
+      phone: dto.phone || null,
+    });
+
+    const savedUser = await this.userRepository.save(user);
+
+    return {
+      id: savedUser.id,
+      fullName: savedUser.fullName,
+      email: savedUser.email,
+      phone: savedUser.phone,
+    };
+  }
+
+  // =========================
   // LOGIN
   // =========================
 
   async login(dto: LoginDto) {
-     const user = await this.userRepository
+    const user = await this.userRepository
       .createQueryBuilder('user')
       .addSelect('user.password')
       .where('user.email = :email', {
@@ -99,6 +133,7 @@ export class AuthService {
       user: {
         id: user.id,
         email: user.email,
+        fullName: user.fullName,
       },
     };
   }

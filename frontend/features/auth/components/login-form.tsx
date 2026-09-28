@@ -1,8 +1,9 @@
-'use client';
+﻿'use client';
 
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Eye, EyeOff, Loader2, LogIn } from 'lucide-react';
+import Link from 'next/link';
 import { useState } from 'react';
 
 import { Button } from '@/components/ui/button';
@@ -70,13 +71,13 @@ export function LoginForm() {
             <FormItem>
               <div className="flex items-center justify-between">
                 <FormLabel className="text-slate-300 text-sm font-medium">
-                  Mat khau
+                  Mật khẩu
                 </FormLabel>
                 <a
                   href="#"
                   className="text-xs text-violet-400 hover:text-violet-300 transition-colors"
                 >
-                  Quen mat khau?
+                  Quên mật khẩu?
                 </a>
               </div>
               <FormControl>
@@ -84,7 +85,7 @@ export function LoginForm() {
                   <Input
                     id="login-password"
                     type={showPassword ? 'text' : 'password'}
-                    placeholder="Min 8 characters"
+                    placeholder="Tối thiểu 8 ký tự"
                     autoComplete="current-password"
                     disabled={isPending}
                     className="bg-white/5 border-white/10 text-white placeholder:text-slate-500 focus-visible:ring-violet-500 h-11 pr-11 transition-all duration-200"
@@ -119,15 +120,26 @@ export function LoginForm() {
           {isPending ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Dang dang nhap...
+              Đang đăng nhập...
             </>
           ) : (
             <>
               <LogIn className="mr-2 h-4 w-4" />
-              Dang nhap
+              Đăng nhập
             </>
           )}
         </Button>
+
+        {/* Register link */}
+        <div className="text-center text-sm text-slate-400 pt-2">
+          Chưa có tài khoản?{' '}
+          <Link
+            href="/register"
+            className="text-violet-400 hover:text-violet-300 font-medium transition-colors"
+          >
+            Đăng ký ngay
+          </Link>
+        </div>
       </form>
     </Form>
   );
