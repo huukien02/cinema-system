@@ -3,8 +3,8 @@ import { Film } from 'lucide-react';
 import { LoginForm } from '@/features/auth/components/login-form';
 
 export const metadata: Metadata = {
-  title: 'Dang nhap - Cinema System',
-  description: 'Dang nhap vao he thong quan ly rap chieu phim',
+  title: 'Đăng nhập - Cinema System',
+  description: 'Đăng nhập vào hệ thống quản lý rạp chiếu phim',
 };
 
 export default function LoginPage() {
@@ -40,7 +40,7 @@ export default function LoginPage() {
               Cinema System
             </h1>
             <p className="text-slate-400 text-sm mt-1">
-              Dang nhap de quan ly he thong
+              Đăng nhập để quản lý hệ thống
             </p>
           </div>
 

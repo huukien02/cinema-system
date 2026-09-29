@@ -14,9 +14,9 @@ export function useLogin() {
       toast.success('Đăng nhập thành công!', {
         description: `Chào mừng ${data.user.fullName || data.user.email}!`,
       });
-      setTimeout(() => {
-        router.push('/');
-      }, 800);
+      // setTimeout(() => {
+      //   router.push('/');
+      // }, 800);
     },
     onError: (error: unknown) => {
       const message =
